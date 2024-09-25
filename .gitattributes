@@ -1,0 +1,2 @@
+plotting/*.js filter=lfs diff=lfs merge=lfs -text
+static/js/plotting/plot_grun33.js filter=lfs diff=lfs merge=lfs -text
