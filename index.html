@@ -137,7 +137,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/PITT-MIT-IAC/dataset-utils"
+                <a href="/coming_soon.html"
                    class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -145,26 +145,27 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Code Link. -->
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#viz"
+                   class="external-link button is-normal">
+                  <span class="icon">
+                      <i class="fa fa-eye"></i>
+                  </span>
+                  <span>Viz</span>
+                  </a>
+              </span>
+              <!-- Data Link. -->
               <span class="link-block">
                 <a href="https://drive.google.com/drive/folders/1M-MJBWjVZBrjzQFA91f3AEFpJd2r3jfZ?usp=drive_link"
                    class="external-link button is-normal ">
                   <span class="icon">
-                      <i class="fa fa-globe"></i>
+                      <i class="fa fa-database"></i>
                   </span>
                   <span>Data</span>
                   </a>
               </span>
-              <!-- Demo Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/spla-tam/SplaTAM#demo"
-                   class="external-link button is-normal">
-                  <span class="icon">
-                      <i class="fa fa-basketball-ball"></i>
-                  </span>
-                  <span>Demo</span>
-                  </a>
-              </span> -->
+              
               <!-- Hugging Face Demo Link.
               <span class="link-block">
                 <a href="https://huggingface.co/spaces/TheProjectsGuy/AnyLoc"
@@ -332,17 +333,34 @@ TODO: add interactive graphs/plots/utilities here
   <div class="container is-max-desktop content">
     <div id="track-select-block">
       <div>
-        <h2 class="title is-3">Visualizations</h2>
+        <h1 class="title is-3">Visualizations</h1>
+        <p class="is-size-10">Visualize our data! Select one of the tracks to view camera, LiDAR, and timeseries data from this track.</p>
         <h3 id="current-track">Las Vegas Motor Speedway</h3>
       </div>
       <div id="track-select-row">
         <div id="track-select-button-grun33" class="track-select-button" onclick='set_run("grun33")'>
-          <p>LVMS</p>
-          <img class="track-icon" src="static/images/colorful-balloons.png">
+          <p>Las Vegas</p>
+          <img class="track-icon" src="static/images/lvms.svg">
         </div>
         <div id="track-select-button-grun16" class="track-select-button" onclick='set_run("grun16")'></button>
-          <p>GRUN16</p>
-          <img class="track-icon" src="static/images/colorful-balloons.png">
+          <p>Lucas Oil</p>
+          <img class="track-icon" src="static/images/lor.svg">
+        </div>
+        <div id="track-select-button-grun50" class="track-select-button" onclick='set_run("grun50")'></button>
+          <p>Indianapolis</p>
+          <img class="track-icon" src="static/images/ims.svg">
+        </div>
+        <div id="track-select-button-grun20" class="track-select-button" onclick='set_run("grun20")'></button>
+          <p>Texas </p>
+          <img class="track-icon" src="static/images/tms.svg">
+        </div>
+        <div id="track-select-button-grun48" class="track-select-button" onclick='set_run("grun48")'></button>
+          <p>Monza</p>
+          <img class="track-icon" src="static/images/monza.svg">
+        </div>
+        <div id="track-select-button-grun38" class="track-select-button" onclick='set_run("grun38")'></button>
+          <p>Goodwood</p>
+          <img class="track-icon" src="static/images/goodwood.svg">
         </div>
       </div>
     </div>
@@ -367,8 +385,14 @@ TODO: add interactive graphs/plots/utilities here
       <!-- WORKS!!! -->
       <script src="https://d3js.org/d3.v6.min.js"></script>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      <script src="static/js/plotting/plot_grun33.js"></script>
-      <script src="static/js/plotting/dummy_plot_grun16.js"></script>
+
+      <!-- Timeseries Plots -->
+      <script src="static/js/plotting/grun16/grun16.js"></script>
+      <script src="static/js/plotting/grun20/grun20.js"></script>
+      <script src="static/js/plotting/grun33/grun33.js"></script>
+      <script src="static/js/plotting/grun38/grun38.js"></script>
+      <script src="static/js/plotting/grun48/grun48.js"></script>
+      <script src="static/js/plotting/grun50/grun50.js"></script>
     
     
       <!-- <script>

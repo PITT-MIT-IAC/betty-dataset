@@ -91,12 +91,45 @@ const set_run = (grun) => {
     document.getElementById('camera-image-1').src = 'static/data/grun16/00018501.png';
     document.getElementById('camera-image-2').src = 'static/data/grun16/00006400.png';
     document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
-    document.getElementById('current-track').textContent = 'GRUN 16';
+    document.getElementById('current-track').textContent = 'Lucas Oil Raceway';
   } else if (grun == 'grun20') {
+    // TODO: Add Lidar and Camera content
+    scene.remove.apply(scene, scene.children);
+    loader.load('./assets/grun16/00019329.pcd', point_func);
+    Plotly.newPlot('myDiv', grun20_traces, grun20_layout);
+    document.getElementById('camera-image-1').src = 'static/data/grun16/00018501.png';
+    document.getElementById('camera-image-2').src = 'static/data/grun16/00006400.png';
+    document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
+    document.getElementById('current-track').textContent = 'Texas Motor Speedway';
+  } else if (grun == 'grun48') {
+    // TODO: Add Lidar and Camera content
+    scene.remove.apply(scene, scene.children);
+    loader.load('./assets/grun16/00019329.pcd', point_func);
+    Plotly.newPlot('myDiv', grun48_traces, grun48_layout);
+    document.getElementById('camera-image-1').src = 'static/data/grun16/00018501.png';
+    document.getElementById('camera-image-2').src = 'static/data/grun16/00006400.png';
+    document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
+    document.getElementById('current-track').textContent = 'Autodromo Nazionale Monza';
 
-  } else if (grun == 'grun37') {
+  } else if (grun == 'grun50') {
+    // TODO: Add Lidar and Camera content
+    scene.remove.apply(scene, scene.children);
+    loader.load('./assets/grun16/00019329.pcd', point_func);
+    Plotly.newPlot('myDiv', grun50_traces, grun50_layout);
+    document.getElementById('camera-image-1').src = 'static/data/grun16/00018501.png';
+    document.getElementById('camera-image-2').src = 'static/data/grun16/00006400.png';
+    document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
+    document.getElementById('current-track').textContent = 'Indianapolis Motor Speedway';
 
-  } else if (grun == 'grun44') {
+  } else if (grun == 'grun38') {
+    // TODO: Add Lidar and Camera content
+    scene.remove.apply(scene, scene.children);
+    loader.load('./assets/grun16/00019329.pcd', point_func);
+    Plotly.newPlot('myDiv', grun38_traces, grun38_layout);
+    document.getElementById('camera-image-1').src = 'static/data/grun16/00018501.png';
+    document.getElementById('camera-image-2').src = 'static/data/grun16/00006400.png';
+    document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
+    document.getElementById('current-track').textContent = 'Goodwood Festival of Speed';
 
   } else { // assume grun48
 

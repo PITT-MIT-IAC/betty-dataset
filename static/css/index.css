@@ -11,6 +11,17 @@ body {
     color: #000;
 }
 
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.account::before {
+  font: var(--fa-eye);
+  content: '\f106e';
+}
+
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
