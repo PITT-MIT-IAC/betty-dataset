@@ -1,9 +1,79 @@
 <html>
 <head>
-  <div class="bgimg">
-    <div class="center">
-      <h1><img src="assets/av21_slide.gif" alt="" height="30px">COMING SOON<img src="assets/av21_slide.gif" alt="" height="30px"></h1>
-    </div>
-  </div>
+  <title>Coming Soon - BETTY Dataset</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      font-family: Arial, sans-serif;
+    }
+    
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .racing-car {
+      animation: race 2s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes race {
+      0% {
+        transform: translateX(-50px);
+      }
+      100% {
+        transform: translateX(50px);
+      }
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
+<body>
+  <div class="container">
+    <div class="racing-car">
+      <img src="assets/av21_slide.gif" alt="Racing Car" height="50px">
+    </div>
+    <h1>COMING SOON!</h1>
+    <p class="message">Our team is working hard to bring you something awesome.</p>
+    <p class="message" style="animation-delay: 0.5s">Stay tuned!</p>
+  </div>
+</body>
 </html>
