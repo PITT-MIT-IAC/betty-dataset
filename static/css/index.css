@@ -188,6 +188,18 @@ body {
   overflow: hidden;
 }
 
+#pointcloud-viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50%; /* Ensure it takes full width */
+  height: 400px;
+  /* border: 100px solid #a10000; */
+  overflow: hidden;
+  position: relative;
+}
+
 .results-carousel {
   overflow: hidden;
 }

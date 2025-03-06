@@ -8,84 +8,122 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>Potree Viewer</title>
 
-	<link rel="stylesheet" type="text/css" href="./static/data/grun33/potree_output/libs/potree/potree.css">
-	<link rel="stylesheet" type="text/css" href="./static/data/grun33/potree_output/libs/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="./static/data/grun33/potree_output/libs/openlayers3/ol.css">
-	<link rel="stylesheet" type="text/css" href="./static/data/grun33/potree_output/libs/spectrum/spectrum.css">
-	<link rel="stylesheet" type="text/css" href="./static/data/grun33/potree_output/libs/jstree/themes/mixed/style.css">
+  
+	<link rel="stylesheet" type="text/css" href="./libs/potree/potree.css">
+	<link rel="stylesheet" type="text/css" href="./libs/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="./libs/openlayers3/ol.css">
+	<link rel="stylesheet" type="text/css" href="./libs/spectrum/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="./libs/jstree/themes/mixed/style.css">
 </head>
 
 <body>
-	<script src="./static/data/grun33/potree_output/libs/jquery/jquery-3.1.1.min.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/spectrum/spectrum.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/jquery-ui/jquery-ui.min.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/other/BinaryHeap.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/tween/tween.min.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/d3/d3.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/proj4/proj4.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/openlayers3/ol.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/i18next/i18next.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/jstree/jstree.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/potree/potree.js"></script>
-	<script src="./static/data/grun33/potree_output/libs/plasio/js/laslaz.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> <!-- Load THREE first -->
+	<script src="./libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="./libs/spectrum/spectrum.js"></script>
+	<script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="./libs/other/BinaryHeap.js"></script>
+	<script src="./libs/tween/tween.min.js"></script>
+	<script src="./libs/d3/d3.js"></script>
+	<script src="./libs/proj4/proj4.js"></script>
+	<script src="./libs/openlayers3/ol.js"></script>
+	<script src="./libs/i18next/i18next.js"></script>
+	<script src="./libs/jstree/jstree.js"></script>
+	<script src="./libs/potree/potree.js"></script>
+	<script src="./libs/plasio/js/laslaz.js"></script>
 	
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
 	<!-- INCLUDE SETTINGS HERE -->
 	
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
-		<div id="potree_render_area" style="background-image: url('../build/potree/resources/images/background.jpg');"></div>
+		<div id="potree_render_area"></div> 
+    <!-- div> style="background-image: url('../build/potree/resources/images/background.jpg');"></div> -->
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
 	<script>
 	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-		
+    
+		viewer.scene.background = Potree.Scene.BACKGROUND_GRADIENT
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
-		viewer.setPointBudget(2_000_000);
+		viewer.setPointBudget(200_000);
 		<!-- INCLUDE SETTINGS HERE -->
 		viewer.loadSettingsFromURL();
 		
 		viewer.setDescription("");
 		
 		viewer.loadGUI(() => {
-			viewer.setLanguage('en');
-			$("#menu_scene").next().show();
-			$("#menu_clipping").next().show();
-			viewer.toggleSidebar();
+      viewer.setLanguage('en');
+      $("#menu_scene").next().show();
+      $("#menu_clipping").next().show();
+      // viewer.toggleSidebar();
 
 		});
 		
-		Potree.loadPointCloud("./static/data/grun33/potree_output/pointclouds//metadata.json", "", e => {
-			let scene = viewer.scene;
-			let pointcloud = e.pointcloud;
-			
-			let material = pointcloud.material;
-			material.size = 2;
-      material.pointSizeType = Potree.PointSizeType.FIXED;
-			material.shape = Potree.PointShape.SPHERE;
-			material.activeAttributeName = "elevation";
-			
-			scene.addPointCloud(pointcloud);
+    // Potree.loadPointCloud("./static/data/grun33/potree_output/pointclouds/metadata.json", "", e => {
+    //   let scene = viewer.scene;
+    //   let pointcloud = e.pointcloud;
 
-      scene.view.position.set(
-        -48.32991311667236,
-        33.44058014821721,
-        51.27028682706569,
-      );
-      scene.view.lookAt(
-        -2.016356649404962,
-        2.754443770732557,
-        3.085092662073073,
-      );
+    //   let material = pointcloud.material;
+    //   material.size = 1;
+    //   material.pointSizeType = Potree.PointSizeType.FIXED;
+    //   material.shape = Potree.PointShape.SPHERE;
+    //   material.activeAttributeName = "elevation";
 
-			viewer.fitToScreen();
-		});
+    //   scene.addPointCloud(pointcloud);
 
-		
-		
-	</script>
+    //   scene.view.position.set(
+    //     -48.31212244074629,
+    //     12.32598831504586,
+    //     23.524822008503996,
+    //   );
+    //   scene.view.lookAt(
+    //     -2.490216351027989,
+    //     4.162392766183796,
+    //     9.939063109279841,
+    //   );
+
+    //   let axesHelper = new THREE.AxesHelper(1);
+    //   axesHelper.position.set(0, 0, 0);
+    //   scene.scene.add(axesHelper);
+    // });
+    
+    // Function to load a point cloud from a metadata.json file
+    function loadPointCloud(metadataPath, position, lookAt) {
+      Potree.loadPointCloud(metadataPath, "", e => {
+        let scene = viewer.scene;
+        let pointcloud = e.pointcloud;
+
+        // Configure the point cloud material
+        let material = pointcloud.material;
+        material.size = 1;
+        material.pointSizeType = Potree.PointSizeType.FIXED;
+        material.shape = Potree.PointShape.SPHERE;
+        material.activeAttributeName = "elevation";
+
+        // Add the point cloud to the scene
+        scene.addPointCloud(pointcloud);
+
+        // Set the camera position and look-at point
+        scene.view.position.set(...position);
+        scene.view.lookAt(...lookAt);
+
+        // Add an axes helper to the scene
+        let axesHelper = new THREE.AxesHelper(1);
+        axesHelper.position.set(0, 0, 0);
+        scene.scene.add(axesHelper);
+      });
+    }
+
+    // Example usage: Load a point cloud
+    const metadataPath = "./static/data/grun33/potree_output/metadata.json";
+    const position = [-48.31212244074629, 12.32598831504586, 23.524822008503996];
+    const lookAt = [-2.490216351027989, 4.162392766183796, 9.939063109279841];
+    loadPointCloud(metadataPath, position, lookAt);
+  </script>
+
+	<!-- </script> -->
 	
 	
   </body>

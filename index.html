@@ -35,7 +35,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/filter.js"></script>
+  <!-- <script src="static/js/filter.js"></script> -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
@@ -251,11 +251,6 @@
 </section>
 
 <!--
-TODO: add interactive graphs/plots/utilities here
--->
-
-
-<!--
 <section class="section" id="filter">
 <div class="hero-body">
 <div class="container is-max-desktop">
@@ -388,11 +383,12 @@ TODO: add interactive graphs/plots/utilities here
           </div>
         </div>
         <div id="lidar-viewer">
-          <div id="lidar-container"></div>
+          <div id="lidar-container" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
       <div id="myDiv" style="width: 100%; height: 600px;"></div>
       <!-- WORKS!!! -->
+      <p>See a snapshot of the timeseries data!</p>
       <script src="https://d3js.org/d3.v6.min.js"></script>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -403,54 +399,37 @@ TODO: add interactive graphs/plots/utilities here
       <script src="static/js/plotting/grun38/grun38.js"></script>
       <script src="static/js/plotting/grun48/grun48.js"></script>
       <script src="static/js/plotting/grun50/grun50.js"></script>
-    
-    
-      <!-- <script>
-        var trace2 = {
-          x: [2, 3, 4, 5],
-          y: [16, 5, 11, 9],
-          mode: 'lines',
-          line: {
-            color: 'rgb(55, 128, 191)',
-            width: 3
-          }
-        };
-
-        var trace3 = {
-          x: [1, 2, 3, 4],
-          y: [12, 9, 15, 12],
-          mode: 'lines+markers',
-          marker: {
-            color: 'rgb(128, 0, 128)',
-            size: 8
-          },
-          line: {
-            color: 'rgb(128, 0, 128)',
-            width: 1
-          }
-        };
-
-        var data = [trace2, trace3];
-
-        var layout = {
-          title: 'Line and Scatter Styling'
-        };
-
-        Plotly.newPlot('myDiv', data, layout);
-      </script> -->
-      
+  
     </div>
     <script src="static/js/bulma-carousel.min.js"></script>
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PCDLoader.js"></script>
-    <script src="static/js/index.js"></script>
+    <script src="./libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="./libs/spectrum/spectrum.js"></script>
+    <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./libs/other/BinaryHeap.js"></script>
+    <script src="./libs/tween/tween.min.js"></script>
+    <script src="./libs/d3/d3.js"></script>
+    <script src="./libs/proj4/proj4.js"></script>
+    <script src="./libs/openlayers3/ol.js"></script>
+    <script src="./libs/i18next/i18next.js"></script>
+    <script src="./libs/jstree/jstree.js"></script>
+    <script src="./libs/potree/potree.js"></script>
+    <script src="./libs/plasio/js/laslaz.js"></script>
+    <script src="static/js/index2.js"></script>
     <!-- <iframe id="viziframe" src="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap"></iframe> -->
     <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fmyawsbucketmprw.s3.us-west-2.amazonaws.com%2Fall_sensors_for_so_verytcut_2023-01-07-VEH8-LVMS-RUN-6_0.mcap">See complete visualizations in Foxglove</a>
     <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
     <!-- <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap">See visualizations in Foxglove</a> -->
+     <!-- Button to go to Potree Viewer -->
+    <button onclick="window.location.href='potree-viewer.html';">View Point Cloud</button>
   </div>
+</section>
+
+<section id="pointcloud-viewer">
+  <iframe src="potree-viewer.html" width="100%" height="100%"></iframe>
 </section>
 
 <section class="section" id="BibTeX">
