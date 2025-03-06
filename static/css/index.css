@@ -147,14 +147,62 @@ body {
   border-radius: 3px;
   text-align: center;
   align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transition */
+}
+
+/* Hover effect */
+.track-select-button:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  transform: scale(1.05); /* Slightly scale up the button */
 }
 
 .active-track {
-  background-color: #fbe5ff;
+  background-color: #ffe8e5;
 }
 
 .track-icon {
   width: 65px;
+}
+
+#timeseries-div {
+  position: relative; /* Ensure the container is a positioning context */
+  width: 100%;
+  height: 500px;
+}
+
+#timeseries-description-wrapper {
+  position: absolute; /* Position the wrapper absolutely within the container */
+  bottom: 10px; /* Adjust the top position as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 10; /* Ensure the text appears above the plot */
+  text-align: center; /* Center the text */
+}
+
+#timeseries-description {
+  font-size: 14px;
+  color: #333; /* Text color */
+  margin-top: 10px;
+  font-style: italic;
+  text-align: center; /* Center the text */
+  padding: 10px 20px; /* Add padding for better spacing */
+  border-radius: 8px; /* Rounded corners */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.8), /* Semi-transparent white */
+    rgba(240, 240, 240, 0.8) /* Semi-transparent light gray */
+  ); /* Gradient background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(5px); /* Blur effect for a modern look */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for definition */
+  max-width: 100%; /* Limit width for better readability */
+  
+}
+
+.deep-dive {
+  color: #ff6f61; /* Coral color for "Deep Dive" */
+  font-weight: bold; /* Make it bold */
+  text-transform: uppercase; /* Uppercase for emphasis */
 }
 
 #vizblock {

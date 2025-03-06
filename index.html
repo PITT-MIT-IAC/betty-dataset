@@ -339,7 +339,7 @@
     <div id="track-select-block">
       <div>
         <h1 class="title is-3">Visualizations</h1>
-        <p class="is-size-10">Visualize our data! Select one of the tracks to view camera, LiDAR, and timeseries data from this track.</p>
+        <p class="is-size-10">Visualize our data! Explore 🔎 and play around 🛝 Select one of the tracks to view camera, LiDAR, and timeseries data from this track.</p>
         <h3 id="current-track">Las Vegas Motor Speedway</h3>
       </div>
       <div id="track-select-row">
@@ -372,6 +372,7 @@
     
     <div id="vizblock">
       <div id="viz-row">
+        <!-- <p class="timeseries-description">Camera Viewer: Explore images from the camera feed.</p> -->
         <div id="camera-viewer">
           <div id="camera-carousel" class="carousel">
             <div class="item-1">
@@ -382,13 +383,17 @@
             </div>
           </div>
         </div>
+        <!-- <p class="timeseries-description">LiDAR Viewer: Visualize 3D point cloud data.</p> -->
         <div id="lidar-viewer">
           <div id="lidar-container" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
-      <div id="myDiv" style="width: 100%; height: 600px;"></div>
+      <p id="timeseries-description">See a snapshot of the timeseries data!</p>
+      <div id="timeseries-div" style="width: 100%; height: 400px; position: relative;">
+      </div>
+
       <!-- WORKS!!! -->
-      <p>See a snapshot of the timeseries data!</p>
+      <!-- See a snapshot of the timeseries data! -->
       <script src="https://d3js.org/d3.v6.min.js"></script>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -418,7 +423,7 @@
     <script src="./libs/jstree/jstree.js"></script>
     <script src="./libs/potree/potree.js"></script>
     <script src="./libs/plasio/js/laslaz.js"></script>
-    <script src="static/js/index2.js"></script>
+    <script src="static/js/index.js"></script>
     <!-- <iframe id="viziframe" src="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap"></iframe> -->
     <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fmyawsbucketmprw.s3.us-west-2.amazonaws.com%2Fall_sensors_for_so_verytcut_2023-01-07-VEH8-LVMS-RUN-6_0.mcap">See complete visualizations in Foxglove</a>
     <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>

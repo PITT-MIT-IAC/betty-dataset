@@ -85,40 +85,46 @@ viewer.setScene(viewer.scene); // Update the viewer with the new scene
 // Load the appropriate point cloud, images, and time series data
 if (grun === 'grun33') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json');
-  Plotly.newPlot('myDiv', grun33_traces, grun33_layout);
+  Plotly.newPlot('timeseries-div', grun33_traces, grun33_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
   document.getElementById('current-track').textContent = 'Las Vegas Motor Speedway';
+  document.getElementById('timeseries-description').innerHTML = '🔎 <span class="deep-dive">Timeseries Deep Dive</span>: Wheel speed reaching up to 230 kmph (143mph)';
 } else if (grun === 'grun16') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json');
-  Plotly.newPlot('myDiv', grun16_traces, grun16_layout);
+  Plotly.newPlot('timeseries-div', grun16_traces, grun16_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
   document.getElementById('current-track').textContent = 'Lucas Oil Raceway';
+  document.getElementById('timeseries-description').innerHTML = '🔎 <span class="deep-dive">Timeseries Deep Dive</span>: Watch as we shift down in gears';
 } else if (grun === 'grun20') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json');
-  Plotly.newPlot('myDiv', grun20_traces, grun20_layout);
+  Plotly.newPlot('timeseries-div', grun20_traces, grun20_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
   document.getElementById('current-track').textContent = 'Texas Motor Speedway';
+  document.getElementById('timeseries-description').innerHTML = '🔎 <span class="deep-dive">Timeseries Deep Dive</span>: We see more displacement in the rear dampers than front';
 } else if (grun === 'grun48') {
-  loadPointCloud('./static/data/grun48/potree_output/metadata.json');
-  Plotly.newPlot('myDiv', grun48_traces, grun48_layout);
+  loadPointCloud('./static/data/grun48/potree_output_track/metadata.json');
+  Plotly.newPlot('timeseries-div', grun48_traces, grun48_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
   document.getElementById('current-track').textContent = 'Autodromo Nazionale Monza';
+  document.getElementById('timeseries-description').innerHTML = '🔎 <span class="deep-dive">Timeseries Deep Dive</span>: Look at how the tire temperature warms up as we keep driving. The front is warming up faster than the rear too!';
 } else if (grun === 'grun50') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json');
-  Plotly.newPlot('myDiv', grun50_traces, grun50_layout);
+  Plotly.newPlot('timeseries-div', grun50_traces, grun50_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
   document.getElementById('current-track').textContent = 'Indianapolis Motor Speedway';
+  document.getElementById('timeseries-description').innerHTML = '🔎 <span class="deep-dive">Timeseries Deep Dive</span>: Watch the engine RPM rise';
 } else if (grun === 'grun38') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json');
-  Plotly.newPlot('myDiv', grun38_traces, grun38_layout);
+  Plotly.newPlot('timeseries-div', grun38_traces, grun38_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
   document.getElementById('current-track').textContent = 'Goodwood Festival of Speed';
+  document.getElementById('timeseries-description').innerHTML = '🔎 <span class="deep-dive">Timeseries Deep Dive</span>: Look at how the tire temperature warms up as we keep driving. The front is warming up faster than the rear too!';
 }
 
 // Add active class to the selected track button
