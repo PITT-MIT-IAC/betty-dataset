@@ -129,6 +129,13 @@ body {
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
+
+  /* TBD if I want stickiness */
+  /* position: sticky;
+  top: 0;
+  padding: 10px 16px;
+  background: white;
+  z-index: 1000; */
 }
 
 #track-select-row {
@@ -179,11 +186,10 @@ body {
   text-align: center; /* Center the text */
 }
 
-#timeseries-description {
+#percep-description {
   font-size: 14px;
   color: #333; /* Text color */
   margin-top: 10px;
-  font-style: italic;
   text-align: center; /* Center the text */
   padding: 10px 20px; /* Add padding for better spacing */
   border-radius: 8px; /* Rounded corners */
@@ -199,10 +205,75 @@ body {
   
 }
 
-.deep-dive {
+#timeseries-description {
+  font-size: 14px;
+  color: #333; /* Text color */
+  margin-top: 10px;
+  text-align: center; /* Center the text */
+  padding: 10px 20px; /* Add padding for better spacing */
+  border-radius: 8px; /* Rounded corners */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.8), /* Semi-transparent white */
+    rgba(240, 240, 240, 0.8) /* Semi-transparent light gray */
+  ); /* Gradient background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(5px); /* Blur effect for a modern look */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for definition */
+  max-width: 100%; /* Limit width for better readability */
+  
+}
+
+.text-emphasize {
   color: #ff6f61; /* Coral color for "Deep Dive" */
   font-weight: bold; /* Make it bold */
   text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+.button-wrapper {
+  /* Default wrapper styles */
+}
+
+.button-wrapper.center {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (optional) */
+}
+
+.custom-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #d089e6;
+  border-radius: 12px;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #357abd;
+  transform: scale(1.05);
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.button-text {
+  font-weight: bold;
 }
 
 #vizblock {

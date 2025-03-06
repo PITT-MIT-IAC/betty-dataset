@@ -324,7 +324,7 @@
 </section>
 -->
 
-<section class="section" id="viz">
+<section class="section" id="disclaimer">
   <div class="container is-max-desktop content">
       <div>
         <h1 class="title is-3">⚠️ Disclaimer</h1>
@@ -334,11 +334,11 @@
 </section>
 
 
-<section class="section" id="viz">
+<section class="section" id="viz" >
   <div class="container is-max-desktop content">
     <div id="track-select-block">
       <div>
-        <h1 class="title is-3">Visualizations</h1>
+        <h1 class="title is-3">Explore the Data</h1>
         <p class="is-size-10">Visualize our data! Explore 🔎 and play around 🛝 Select one of the tracks to view camera, LiDAR, and timeseries data from this track.</p>
         <h3 id="current-track">Las Vegas Motor Speedway</h3>
       </div>
@@ -371,8 +371,14 @@
     </div>
     
     <div id="vizblock">
+      <p id="percep-description">
+        📷<em>
+          <span class="text-emphasize" style="color: #ac5df5;">PERCEPTION HIGHLIGHT</span>
+          : Explore how different all sensors look on each track!<br />Flip through images and pan around pointclouds
+        </em>
+      </p>
       <div id="viz-row">
-        <!-- <p class="timeseries-description">Camera Viewer: Explore images from the camera feed.</p> -->
+        <!-- Camera visualization -->
         <div id="camera-viewer">
           <div id="camera-carousel" class="carousel">
             <div class="item-1">
@@ -383,11 +389,14 @@
             </div>
           </div>
         </div>
-        <!-- <p class="timeseries-description">LiDAR Viewer: Visualize 3D point cloud data.</p> -->
+        
+        <!-- LiDAR visualization -->
         <div id="lidar-viewer">
           <div id="lidar-container" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
+
+      <!-- Timeseries visualization -->
       <p id="timeseries-description">See a snapshot of the timeseries data!</p>
       <div id="timeseries-div" style="width: 100%; height: 400px; position: relative;">
       </div>
@@ -424,18 +433,36 @@
     <script src="./libs/potree/potree.js"></script>
     <script src="./libs/plasio/js/laslaz.js"></script>
     <script src="static/js/index.js"></script>
-    <!-- <iframe id="viziframe" src="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap"></iframe> -->
-    <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fmyawsbucketmprw.s3.us-west-2.amazonaws.com%2Fall_sensors_for_so_verytcut_2023-01-07-VEH8-LVMS-RUN-6_0.mcap">See complete visualizations in Foxglove</a>
-    <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
-    <!-- <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap">See visualizations in Foxglove</a> -->
-     <!-- Button to go to Potree Viewer -->
-    <button onclick="window.location.href='potree-viewer.html';">View Point Cloud</button>
+
+    <!-- Map viewer -->
+    <!-- Static for now -->
+    <p id="percep-description">
+      🗺️<em>
+        <span class="text-emphasize" style="color: #4983db;">MAP EXPLORATION</span>
+        : Pan around our HD maps<br />Menu > Tools > Navigation to change movement pattern
+      </em>
+    </p>
+    <iframe src="potree-viewer.html" width="100%" height="500px"></iframe>
+
+    <!-- Foxglove -->
+    <div class="button-wrapper center">
+      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-combined%2Fgrun-48-combined_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250306%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250306T183550Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Da060de9ed154dbe30ca8b0bd474cfcd3fb0ddffc701269bc602f83ab8de10316&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T07%3A57%3A08.300020649Z" target="_blank" class="custom-button">
+        <div class="button-content">
+          <img src="assets/foxglove_logo.svg" alt="Icon" class="button-icon" />
+          <span class="button-text">Check out the data replay features using Foxglove! (Click Me)</span>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center">
+      <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
+    </div>
+
   </div>
 </section>
 
-<section id="pointcloud-viewer">
+<!-- <section id="pointcloud-viewer">
   <iframe src="potree-viewer.html" width="100%" height="100%"></iframe>
-</section>
+</section> -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
