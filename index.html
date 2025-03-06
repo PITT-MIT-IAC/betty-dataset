@@ -69,25 +69,28 @@
                 <a href="mailto:ayoubraji@unimore.it">Ayoub Raji</a><sup>2</sup>,
               </span>
             <span class="author-block">
-              <a href="mailto:asaba96@pitt.edu">Andrew Saba</a><sup>3</sup>,
+              <a href="mailto:asaba96@pitt.edu">Andrew Saba</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="mailto:emerlich@uwaterloo.ca">Eidan Erlich</a><sup>4</sup>,
+              <a href="mailto:emerlich@uwaterloo.ca">Eidan Erlich</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="mailto:robertexley@pitt.edu">Robert Exley</a><sup>3</sup>,
+              <a href="mailto:robertexley@pitt.edu">Robert Exley</a><sup>4</sup>,
             </span>
             <span class="author-block">
-              <a href="mailto:arg195@pitt.edu">Aragya Goyal</a><sup>3</sup>,
+              <a href="mailto:arg195@pitt.edu">Aragya Goyal</a><sup>4</sup>,
             </span>
             <span class="author-block">
-              <a href="mailto:amatros@uwaterloo.ca">Alexander Matros</a><sup>4</sup>,
+              <a href="mailto:amatros@uwaterloo.ca">Alexander Matros</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="mailto:rim39@pitt.edu">Ritesh Misra</a><sup>3</sup>,
+              <a href="mailto:rim39@pitt.edu">Ritesh Misra</a><sup>4</sup>,
             </span>
             <span class="author-block">
               <a href="mailto:msivapra@andrew.cmu.edu">Matthew Sivaprakasam</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:marko.bertogna@unimore.it">Marko Bertogna</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="mailto:deva@andrew.cmu.edu">Deva Ramanan</a><sup>1</sup>,
@@ -100,8 +103,8 @@
           <div class="is-size-6 publication-authors">
             <span class="author-block"><sup>1</sup>Robotics Institute, Carnegie Mellon University</span> <br/>
             <span class="author-block"><sup>2</sup>University of Modena and Reggio Emilio</span> <br/>
-            <span class="author-block"><sup>3</sup>University of Pittsburgh</span> <br/>
-            <span class="author-block"><sup>4</sup>University of Waterloo</span> <br/>
+            <span class="author-block"><sup>3</sup>University of Waterloo</span> <br/>
+            <span class="author-block"><sup>4</sup>University of Pittsburgh</span> <br/>
           </div>
           
           <div class="column has-text-centered">
@@ -347,23 +350,23 @@
           <p>Las Vegas</p>
           <img class="track-icon" src="static/images/lvms.svg">
         </div>
-        <div id="track-select-button-grun16" class="track-select-button" onclick='set_run("grun16")'></button>
+        <div id="track-select-button-grun16" class="track-select-button" onclick='set_run("grun16")'>
           <p>Lucas Oil</p>
           <img class="track-icon" src="static/images/lor.svg">
         </div>
-        <div id="track-select-button-grun50" class="track-select-button" onclick='set_run("grun50")'></button>
+        <div id="track-select-button-grun50" class="track-select-button" onclick='set_run("grun50")'>
           <p>Indianapolis</p>
           <img class="track-icon" src="static/images/ims.svg">
         </div>
-        <div id="track-select-button-grun20" class="track-select-button" onclick='set_run("grun20")'></button>
-          <p>Texas </p>
+        <div id="track-select-button-grun20" class="track-select-button" onclick='set_run("grun20")'>
+          <p>Texas</p>
           <img class="track-icon" src="static/images/tms.svg">
         </div>
-        <div id="track-select-button-grun48" class="track-select-button" onclick='set_run("grun48")'></button>
+        <div id="track-select-button-grun48" class="track-select-button" onclick='set_run("grun48")'>
           <p>Monza</p>
           <img class="track-icon" src="static/images/monza.svg">
         </div>
-        <div id="track-select-button-grun38" class="track-select-button" onclick='set_run("grun38")'></button>
+        <div id="track-select-button-grun38" class="track-select-button" onclick='set_run("grun38")'>
           <p>Goodwood</p>
           <img class="track-icon" src="static/images/goodwood.svg">
         </div>
@@ -456,13 +459,33 @@
     <div style="text-align:center">
       <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
     </div>
-
+    <video controls autoplay loop>
+      <source src="assets/foxglove_viz_video.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
 <!-- <section id="pointcloud-viewer">
   <iframe src="potree-viewer.html" width="100%" height="100%"></iframe>
 </section> -->
+
+<section class="section" id="sensor-specs">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Sensor Specifications</h2>
+    <div style="text-align: center;">
+      <img src="assets/betty_sensors.svg" alt="AV21 (betty) sensors" width="70%"/>
+      <img src="assets/betty_sensors_key.svg" alt="AV21 (betty) sensors key" width="70%"/>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="data-format">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Data Format</h2>
+
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">

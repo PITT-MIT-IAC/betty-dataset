@@ -143,32 +143,51 @@ body {
   flex-direction: row;
   margin-left: auto;
   align-items: center;
+  gap: 0px; /* Add spacing between buttons */
 }
 
 .track-select-button {
   margin: 5px;
-  width: 80px;
-  background-color: white;
+  width: 90px; /* Keep the width unchanged */
+  background-color: #ffffff; /* White background */
   cursor: pointer;
   border: none;
-  border-radius: 3px;
+  border-radius: 12px; /* More rounded corners */
   text-align: center;
   align-items: center;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transition */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 4px; /* Add padding for better spacing */
 }
 
 /* Hover effect */
 .track-select-button:hover {
   background-color: #f0f0f0; /* Light gray background on hover */
   transform: scale(1.05); /* Slightly scale up the button */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Active (clicked) state */
+.track-select-button:active {
+  transform: scale(0.95); /* Slightly scale down when clicked */
 }
 
 .active-track {
   background-color: #ffe8e5;
 }
 
+/* Track icon (unchanged) */
 .track-icon {
-  width: 65px;
+  width: 80px; /* Keep the icon size unchanged */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Text inside the button */
+.track-select-button p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold; /* Make text bold */
+  color: #333; /* Dark gray text color */
 }
 
 #timeseries-div {
