@@ -1,10 +1,17 @@
 
+////////////////////////////////////////
+// Camera Carousel
+////////////////////////////////////////
 // Initialize the Camera viewer
 bulmaCarousel.attach('#camera-carousel', {
   slidesToScroll: 1,
   slidesToShow: 1,
   infinite: true,
 });
+
+////////////////////////////////////////
+// Potree Visualization
+////////////////////////////////////////
 
 // Initialize the Lidar viewer with Potree
 console.log("Initializing Lidar viewer with Potree");
@@ -55,8 +62,12 @@ function loadPointCloud(metadataPath, position, lookAt) {
 }
 
 
+////////////////////////////////////////
+// Track selector
+////////////////////////////////////////
+
 // Function to handle track selection
-let CURRENT_RUN = 'grun33';
+let CURRENT_RUN = 'grun48';
 // const metadataPath = "./static/data/grun33/potree_output/metadata.json";
 const position = [-48.31212244074629, 12.32598831504586, 23.524822008503996];
 const lookAt = [-2.490216351027989, 4.162392766183796, 9.939063109279841];
@@ -74,7 +85,6 @@ for (let run of ['grun33', 'grun16', 'grun20', 'grun37', 'grun44', 'grun48']) {
 //   viewer.scene.scene.remove.apply(viewer.scene.scene, viewer.scene.scene.children);
 viewer.scene = new Potree.Scene(); // Reset the scene
 viewer.setScene(viewer.scene); // Update the viewer with the new scene
-
 
 // Load the appropriate point cloud, images, and time series data
 if (grun === 'grun33') {
@@ -114,11 +124,11 @@ if (grun === 'grun33') {
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Watch the engine RPM rise</em>';
 } else if (grun === 'grun38') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json', position, lookAt);
-  Plotly.newPlot('timeseries-div', grun38_traces, grun38_layout);
+  Plotly.newPlot('timeseries-div', grun33_traces, grun33_layout);
   document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
   document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
   document.getElementById('current-track').textContent = 'Goodwood Festival of Speed';
-  document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Look at how the tire temperature warms up as we keep driving. The front is warming up faster than the rear too!</em>';
+  document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Wheel speed reaching up to 230 kmph (143mph)</em>';
 }
 
 // Add active class to the selected track button
@@ -126,3 +136,20 @@ document.getElementById(`track-select-button-${grun}`).classList.add('active-tra
 };
 
 set_run(CURRENT_RUN);
+
+////////////////////////////////////////
+// Hand animation
+////////////////////////////////////////
+// Get the hand icon
+const hand = document.getElementById('animated-hand');
+const lidarViewer = document.getElementById('lidar-viewer');
+
+function hideHandGracefully() {
+  if (!hand.classList.contains('hidden')) {
+    hand.classList.add('hidden'); // Trigger fade-out
+  }
+}
+
+// Hide the hand on interaction
+lidarViewer.addEventListener('mousedown', hideHandGracefully);
+lidarViewer.addEventListener('touchstart', hideHandGracefully);

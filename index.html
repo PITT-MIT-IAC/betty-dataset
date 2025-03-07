@@ -336,118 +336,160 @@
   </div>
 </section>
 
-
 <section class="section" id="viz" >
   <div class="container is-max-desktop content">
-    <div id="track-select-block">
-      <div>
-        <h1 class="title is-3">Explore the Data</h1>
-        <p class="is-size-10">Visualize our data! Explore 🔎 and play around 🛝 Select one of the tracks to view camera, LiDAR, and timeseries data from this track.</p>
-        <h3 id="current-track">Las Vegas Motor Speedway</h3>
-      </div>
-      <div id="track-select-row">
-        <div id="track-select-button-grun33" class="track-select-button" onclick='set_run("grun33")'>
-          <p>Las Vegas</p>
-          <img class="track-icon" src="static/images/lvms.svg">
+    <div id="track-select-outline">
+      <div id="track-select-block">
+        <div>
+          <h1 class="title is-3">Explore the Data</h1>
+          <p class="is-size-10">Visualize our data! Explore 🔎 and play around 🛝 Select one of the tracks to view camera, LiDAR, and timeseries data from this track.</p>
+          <h3 id="current-track">Las Vegas Motor Speedway</h3>
         </div>
-        <div id="track-select-button-grun16" class="track-select-button" onclick='set_run("grun16")'>
-          <p>Lucas Oil</p>
-          <img class="track-icon" src="static/images/lor.svg">
-        </div>
-        <div id="track-select-button-grun50" class="track-select-button" onclick='set_run("grun50")'>
-          <p>Indianapolis</p>
-          <img class="track-icon" src="static/images/ims.svg">
-        </div>
-        <div id="track-select-button-grun20" class="track-select-button" onclick='set_run("grun20")'>
-          <p>Texas</p>
-          <img class="track-icon" src="static/images/tms.svg">
-        </div>
-        <div id="track-select-button-grun48" class="track-select-button" onclick='set_run("grun48")'>
-          <p>Monza</p>
-          <img class="track-icon" src="static/images/monza.svg">
-        </div>
-        <div id="track-select-button-grun38" class="track-select-button" onclick='set_run("grun38")'>
-          <p>Goodwood</p>
-          <img class="track-icon" src="static/images/goodwood.svg">
-        </div>
-      </div>
-    </div>
-    
-    <div id="vizblock">
-      <p id="percep-description">
-        📷<em>
-          <span class="text-emphasize" style="color: #ac5df5;">PERCEPTION HIGHLIGHT</span>
-          : Explore how different all sensors look on each track!<br />Flip through images and pan around pointclouds
-        </em>
-      </p>
-      <div id="viz-row">
-        <!-- Camera visualization -->
-        <div id="camera-viewer">
-          <div id="camera-carousel" class="carousel">
-            <div class="item-1">
-              <img id="camera-image-1" src="static/data/grun33/00006400.png" alt="Camera Image 1">
-            </div>
-            <div class="item-2">
-              <img id="camera-image-2" src="static/data/grun33/00018501.png" alt="Camera Image 2">
-            </div>
+        <div id="track-select-row">
+          <div id="track-select-button-grun33" class="track-select-button" onclick='set_run("grun33")'>
+            <p>Las Vegas</p>
+            <img class="track-icon" src="static/images/lvms.svg">
+          </div>
+          <div id="track-select-button-grun16" class="track-select-button" onclick='set_run("grun16")'>
+            <p>Lucas Oil</p>
+            <img class="track-icon" src="static/images/lor.svg">
+          </div>
+          <div id="track-select-button-grun50" class="track-select-button" onclick='set_run("grun50")'>
+            <p>Indianapolis</p>
+            <img class="track-icon" src="static/images/ims.svg">
+          </div>
+          <div id="track-select-button-grun20" class="track-select-button" onclick='set_run("grun20")'>
+            <p>Texas</p>
+            <img class="track-icon" src="static/images/tms.svg">
+          </div>
+          <div id="track-select-button-grun48" class="track-select-button" onclick='set_run("grun48")'>
+            <p>Monza</p>
+            <img class="track-icon" src="static/images/monza.svg">
+          </div>
+          <div id="track-select-button-grun38" class="track-select-button" onclick='set_run("grun38")'>
+            <p>Goodwood</p>
+            <img class="track-icon" src="static/images/goodwood.svg">
           </div>
         </div>
-        
-        <!-- LiDAR visualization -->
-        <div id="lidar-viewer">
-          <div id="lidar-container" style="width: 100%; height: 100%;"></div>
+      </div>
+      
+      <div id="vizblock">
+        <div id="viz-row">
+          <!-- Camera visualization -->
+          <div id="camera-viewer">
+            <div id="camera-carousel" class="carousel">
+              <div class="item-1">
+                <img id="camera-image-1" src="static/data/grun33/00006400.png" alt="Camera Image 1">
+              </div>
+              <div class="item-2">
+                <img id="camera-image-2" src="static/data/grun33/00018501.png" alt="Camera Image 2">
+              </div>
+            </div>
+          </div>
+          
+          <!-- LiDAR visualization -->
+          <div id="lidar-viewer">
+            <div id="lidar-container" style="width: 100%; height: 100%;"></div>
+            <!-- Hand icon SVG -->
+            <object id="animated-hand" type="image/svg+xml" data="assets/hand-grabber.svg" width="48" height="48"></object>
+          </div>
         </div>
+        <p id="percep-description">
+          📷<em>
+            <span class="text-emphasize" style="color: #ac5df5;">PERCEPTION HIGHLIGHT</span>
+            : Explore how different all sensors look on each track!<br />Flip through images and pan around pointclouds
+          </em>
+        </p>
+
+        <!-- Timeseries visualization -->
+        <div id="timeseries-div" style="width: 100%; height: 300px; position: relative;">
+        </div>
+        <p id="timeseries-description">See a snapshot of the timeseries data!</p>
+
+        <!-- WORKS!!! -->
+        <!-- See a snapshot of the timeseries data! -->
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        <!-- Timeseries Plots -->
+        <script src="static/js/plotting/grun16/grun16.js"></script>
+        <script src="static/js/plotting/grun20/grun20.js"></script>
+        <script src="static/js/plotting/grun33/grun33.js"></script>
+        <script src="static/js/plotting/grun38/grun38.js"></script>
+        <script src="static/js/plotting/grun48/grun48.js"></script>
+        <script src="static/js/plotting/grun50/grun50.js"></script>
+    
       </div>
+      <script src="static/js/bulma-carousel.min.js"></script>
+      <script src="static/js/bulma-slider.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PCDLoader.js"></script>
+      <script src="./libs/jquery/jquery-3.1.1.min.js"></script>
+      <script src="./libs/spectrum/spectrum.js"></script>
+      <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+      <script src="./libs/other/BinaryHeap.js"></script>
+      <script src="./libs/tween/tween.min.js"></script>
+      <script src="./libs/d3/d3.js"></script>
+      <script src="./libs/proj4/proj4.js"></script>
+      <script src="./libs/openlayers3/ol.js"></script>
+      <script src="./libs/i18next/i18next.js"></script>
+      <script src="./libs/jstree/jstree.js"></script>
+      <script src="./libs/potree/potree.js"></script>
+      <script src="./libs/plasio/js/laslaz.js"></script>
+      <script src="static/js/index.js"></script>
 
-      <!-- Timeseries visualization -->
-      <p id="timeseries-description">See a snapshot of the timeseries data!</p>
-      <div id="timeseries-div" style="width: 100%; height: 400px; position: relative;">
+      <!-- Map viewer -->
+      <!-- Static for now -->
+      <!-- <p id="percep-description">
+        🗺️<em>
+          <span class="text-emphasize" style="color: #4983db;">MAP EXPLORATION</span>
+          : Pan around our HD maps<br />Menu > Tools > Navigation to change movement pattern
+        </em>
+      </p>
+      <iframe src="potree-viewer.html" width="100%" height="500px"></iframe>
+
+      <!-- Foxglove 
+      <div class="button-wrapper center">
+        <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-combined%2Fgrun-48-combined_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250306%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250306T183550Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Da060de9ed154dbe30ca8b0bd474cfcd3fb0ddffc701269bc602f83ab8de10316&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T07%3A57%3A08.300020649Z" target="_blank" class="custom-button">
+          <div class="button-content">
+            <img src="assets/foxglove_logo.svg" alt="Icon" class="button-icon" />
+            <span class="button-text">Check out the data replay features using Foxglove! (Click Me)</span>
+          </div>
+        </a>
       </div>
-
-      <!-- WORKS!!! -->
-      <!-- See a snapshot of the timeseries data! -->
-      <script src="https://d3js.org/d3.v6.min.js"></script>
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-      <!-- Timeseries Plots -->
-      <script src="static/js/plotting/grun16/grun16.js"></script>
-      <script src="static/js/plotting/grun20/grun20.js"></script>
-      <script src="static/js/plotting/grun33/grun33.js"></script>
-      <script src="static/js/plotting/grun38/grun38.js"></script>
-      <script src="static/js/plotting/grun48/grun48.js"></script>
-      <script src="static/js/plotting/grun50/grun50.js"></script>
-  
+      <div style="text-align:center">
+        <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
+      </div>
+      <video controls autoplay loop>
+        <source src="assets/foxglove_viz_video.mp4" type="video/mp4">
+      </video> -->
     </div>
-    <script src="static/js/bulma-carousel.min.js"></script>
-    <script src="static/js/bulma-slider.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PCDLoader.js"></script>
-    <script src="./libs/jquery/jquery-3.1.1.min.js"></script>
-    <script src="./libs/spectrum/spectrum.js"></script>
-    <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
-    <script src="./libs/other/BinaryHeap.js"></script>
-    <script src="./libs/tween/tween.min.js"></script>
-    <script src="./libs/d3/d3.js"></script>
-    <script src="./libs/proj4/proj4.js"></script>
-    <script src="./libs/openlayers3/ol.js"></script>
-    <script src="./libs/i18next/i18next.js"></script>
-    <script src="./libs/jstree/jstree.js"></script>
-    <script src="./libs/potree/potree.js"></script>
-    <script src="./libs/plasio/js/laslaz.js"></script>
-    <script src="static/js/index.js"></script>
+  </div>
+</section>
 
-    <!-- Map viewer -->
-    <!-- Static for now -->
+<section class="section is-light" id="foxglove viz">
+  <div class="container is-max-desktop content">
+    <h1 class="title is-3">HD Maps</h1>
     <p id="percep-description">
       🗺️<em>
         <span class="text-emphasize" style="color: #4983db;">MAP EXPLORATION</span>
         : Pan around our HD maps<br />Menu > Tools > Navigation to change movement pattern
       </em>
     </p>
-    <iframe src="potree-viewer.html" width="100%" height="500px"></iframe>
+    <div>
+      <iframe src="potree-viewer.html" width="100%" height="500px"></iframe>
+    </div>
+  </div>
+</section>
 
+<section class="section" id="foxglove viz">
+  <div class="container is-max-desktop content">
+    <h1 class="title is-3">ROS2 Visualization</h1>
     <!-- Foxglove -->
+    <video controls autoplay loop>
+      <source src="assets/foxglove_viz_video.mp4" type="video/mp4">
+    </video>
     <div class="button-wrapper center">
       <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-combined%2Fgrun-48-combined_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250306%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250306T183550Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Da060de9ed154dbe30ca8b0bd474cfcd3fb0ddffc701269bc602f83ab8de10316&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T07%3A57%3A08.300020649Z" target="_blank" class="custom-button">
         <div class="button-content">
@@ -459,17 +501,13 @@
     <div style="text-align:center">
       <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
     </div>
-    <video controls autoplay loop>
-      <source src="assets/foxglove_viz_video.mp4" type="video/mp4">
-    </video>
   </div>
 </section>
-
 <!-- <section id="pointcloud-viewer">
   <iframe src="potree-viewer.html" width="100%" height="100%"></iframe>
 </section> -->
 
-<section class="section" id="sensor-specs">
+<section class="section is-light" id="sensor-specs">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Sensor Specifications</h2>
     <div style="text-align: center;">
@@ -480,7 +518,7 @@
 </section>
 
 
-<section class="section" id="data-format">
+<section class="section is-light" id="data-format">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Data Format</h2>
 
