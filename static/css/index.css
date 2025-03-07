@@ -349,7 +349,7 @@ section.is-light {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  height: 222px;
+  height: 315px;
 }
 
 #plot-viewer {

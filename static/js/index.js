@@ -65,6 +65,13 @@ function loadPointCloud(metadataPath, position, lookAt) {
 ////////////////////////////////////////
 // Track selector
 ////////////////////////////////////////
+function updateVideoSource(videoElementId, newSource) {
+  const videoElement = document.getElementById(videoElementId);
+  const sourceElement = videoElement.querySelector('source'); // Get the <source> tag
+  sourceElement.src = newSource; // Update the source
+  videoElement.load(); // Reload the video to apply the new source
+  // videoElement.play(); // Optionally, start playing the video
+}
 
 // Function to handle track selection
 let CURRENT_RUN = 'grun48';
@@ -90,43 +97,43 @@ viewer.setScene(viewer.scene); // Update the viewer with the new scene
 if (grun === 'grun33') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json', position, lookAt);
   Plotly.newPlot('timeseries-div', grun33_traces, grun33_layout);
-  document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
-  document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
+  updateVideoSource('camera-video-1', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
+  updateVideoSource('camera-video-2', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
   document.getElementById('current-track').textContent = 'Las Vegas Motor Speedway';
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Wheel speed reaching up to 230 kmph (143mph)</em>';
 } else if (grun === 'grun16') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json', position, lookAt);
   Plotly.newPlot('timeseries-div', grun16_traces, grun16_layout);
-  document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
-  document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
+  updateVideoSource('camera-video-1', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
+  updateVideoSource('camera-video-2', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
   document.getElementById('current-track').textContent = 'Lucas Oil Raceway';
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Watch as we shift down in gears</em>';
 } else if (grun === 'grun20') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json', position, lookAt);
   Plotly.newPlot('timeseries-div', grun20_traces, grun20_layout);
-  document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
-  document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
+  updateVideoSource('camera-video-1', 'static/data/grun20/grun20_mosaic_trimmed.mp4');
+  updateVideoSource('camera-video-2', 'static/data/grun20/grun20_mosaic_trimmed.mp4');
   document.getElementById('current-track').textContent = 'Texas Motor Speedway';
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: We see more displacement in the rear dampers than front</em>';
 } else if (grun === 'grun48') {
   loadPointCloud('./static/data/grun48/potree_output_track/metadata.json', position, lookAt);
   Plotly.newPlot('timeseries-div', grun48_traces, grun48_layout);
-  document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
-  document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
+  updateVideoSource('camera-video-1', 'static/data/grun48/grun48_mosaic_trimmed.mp4');
+  updateVideoSource('camera-video-2', 'static/data/grun48/grun48_mosaic_trimmed.mp4');
   document.getElementById('current-track').textContent = 'Autodromo Nazionale Monza';
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Look at how the tire temperature warms up as we keep driving. The front is warming up faster than the rear too!</em>';
 } else if (grun === 'grun50') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json', position, lookAt);
   Plotly.newPlot('timeseries-div', grun50_traces, grun50_layout);
-  document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
-  document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
+  updateVideoSource('camera-video-1', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
+  updateVideoSource('camera-video-2', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
   document.getElementById('current-track').textContent = 'Indianapolis Motor Speedway';
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Watch the engine RPM rise</em>';
 } else if (grun === 'grun38') {
   loadPointCloud('./static/data/grun33/potree_output/metadata.json', position, lookAt);
   Plotly.newPlot('timeseries-div', grun33_traces, grun33_layout);
-  document.getElementById('camera-image-1').src = 'static/data/grun33/00018501.png';
-  document.getElementById('camera-image-2').src = 'static/data/grun33/00006400.png';
+  updateVideoSource('camera-video-1', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
+  updateVideoSource('camera-video-2', 'static/data/grun33/grun33_mosaic_trimmed.mp4');
   document.getElementById('current-track').textContent = 'Goodwood Festival of Speed';
   document.getElementById('timeseries-description').innerHTML = '🔎<em><span class="text-emphasize">Timeseries Deep Dive</span>: Wheel speed reaching up to 230 kmph (143mph)</em>';
 }
