@@ -111,7 +111,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://drive.google.com/file/d/1gj07xP10B_vZevlVwXNm5aAtVYrqUUbj/view?usp=drive_link"
+                <a href="https://arxiv.org/abs/2505.07266v1"
                    class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -201,22 +201,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-        <div class="container is-max-desktop">
-        <div class="columns is-centered">
-      
-        <div class="column has-text-centered">
-          <div class="content">
-            <video id="s1_recon" autoplay controls muted playsinline height="100%">
-              <source src="assets/ICRA_2025_BETTY_Dataset_Video_Nye.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-        </div>
-        </div>
-      <!-- <h2 class="subtitle has-text-centered">
-        <span>BETTY Dataset</span>
-      </h2> -->
+      <div style="text-align: center;">
+        <img src="assets/betty_title.svg" alt="BETTY Dataset: A Multi-modal Dataset for Full-Stack Autonomy"/>
+      </div>
     </div>
   </div>
 </section>
@@ -377,21 +364,11 @@
         <div id="viz-row">
           <!-- Camera visualization -->
           <div id="camera-viewer">
-            <div id="camera-carousel" class="carousel">
-              <div class="item-1">
-                <video poster="" id="camera-video-1" autoplay controls loop width="100%">
-                  <source src="static/data/grun33/grun33_mosaic_trimmed.mp4"
-                          type="video/mp4">
-                          Your browser does not support the video tag.
-                </video>
-              </div>
-              <div class="item-2">
-                <video poster="" id="camera-video-2" autoplay controls loop width="100%">
-                  <source src="static/data/grun33/grun33_mosaic_trimmed.mp4"
-                          type="video/mp4">
-                          Your browser does not support the video tag.
-                </video>
-              </div>
+            <div id="camera-single-video">
+              <video poster="" id="camera-video" autoplay controls loop width="100%" height="100%">
+                <source src="static/data/grun33/grun33_mosaic_trimmed.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
           
@@ -469,15 +446,18 @@
   <div class="container is-max-desktop content">
     <h1 class="title is-3">ROS2 Visualization</h1>
     <!-- Foxglove -->
-    <video controls autoplay loop>
-      <source src="assets/foxglove_viz_video.mp4" type="video/mp4">
-    </video>
     <div class="button-wrapper center">
-      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun48-trimmed%2Fgrun48_trimmed_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250307%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250307T221604Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Dc1b6349f529f026d90c6bb3f8f8fb6ff1fb62d3773792fce4d6035d249c82011&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.300020992Z" target="_blank" class="custom-button"></a>
-      <!-- <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-combined%2Fgrun-48-combined_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250306%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250306T183550Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Da060de9ed154dbe30ca8b0bd474cfcd3fb0ddffc701269bc602f83ab8de10316&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T07%3A57%3A08.300020649Z" target="_blank" class="custom-button"> -->
+      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun48-trimmed%2Fgrun48_trimmed_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250307%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250307T221604Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Dc1b6349f529f026d90c6bb3f8f8fb6ff1fb62d3773792fce4d6035d249c82011&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.300020992Z" target="_blank" class="custom-button">
         <div class="button-content">
-          <img src="assets/foxglove_logo.svg" alt="Icon" class="button-icon" />
-          <span class="button-text">Check out the data replay features using Foxglove! (Click Me)</span>
+          <div>
+            <video controls autoplay loop muted playsinline style="pointer-events: none;">
+              <source src="assets/foxglove_viz_video.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div>
+            <img src="assets/foxglove_logo.svg" alt="Icon" class="button-icon" />
+            <span class="button-text">Check out the data replay features using Foxglove! (Click Me)</span>
+          </div>
         </div>
       </a>
     </div>
@@ -511,9 +491,15 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
-    <pre><code>
-      Coming soon
-    </code></pre>
+    <pre><code>@misc{nye2025bettydatasetmultimodaldataset,
+  title={BETTY Dataset: A Multi-modal Dataset for Full-Stack Autonomy}, 
+  author={Micah Nye and Ayoub Raji and Andrew Saba and Eidan Erlich and Robert Exley and Aragya Goyal and Alexander Matros and Ritesh Misra and Matthew Sivaprakasam and Marko Bertogna and Deva Ramanan and Sebastian Scherer},
+  year={2025},
+  eprint={2505.07266},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2505.07266}, 
+}</code></pre>
   </div>
 </section>
 

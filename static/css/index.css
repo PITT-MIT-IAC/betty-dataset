@@ -306,10 +306,10 @@ section.is-light {
 .custom-button {
   display: inline-block;
   text-decoration: none;
-  background-color: #d089e6;
+  /* background-color: #d089e6; */ /*transparent */
   border-radius: 12px;
   padding: 10px 20px;
-  color: white;
+  color: black;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -319,7 +319,7 @@ section.is-light {
 }
 
 .custom-button:hover {
-  background-color: #357abd;
+  background-color: #d2b8e0;
   transform: scale(1.05);
 }
 
@@ -327,6 +327,7 @@ section.is-light {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 10px;
 }
 
