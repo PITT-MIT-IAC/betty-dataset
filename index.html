@@ -353,7 +353,7 @@
             <p>Monza</p>
             <img class="track-icon" src="static/images/monza.svg">
           </div>
-          <div id="track-select-button-grun38" class="track-select-button" onclick='set_run("grun38")'>
+          <div id="track-select-button-grun40" class="track-select-button" onclick='set_run("grun40")'>
             <p>Goodwood</p>
             <img class="track-icon" src="static/images/goodwood.svg">
           </div>
@@ -382,7 +382,7 @@
         <p id="percep-description">
           📷<em>
             <span class="text-emphasize" style="color: #ac5df5;">PERCEPTION HIGHLIGHT</span>
-            : Explore how different all sensors look on each track!<br />Flip through images and pan around pointclouds
+            : Explore how different all sensors look on each track!<br />Check out the onboard videos and pan around pointclouds
           </em>
         </p>
 
@@ -397,12 +397,12 @@
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
         <!-- Timeseries Plots -->
-        <script src="static/js/plotting/grun16/grun16.js"></script>
         <script src="static/js/plotting/grun20/grun20.js"></script>
         <script src="static/js/plotting/grun33/grun33.js"></script>
-        <script src="static/js/plotting/grun38/grun38.js"></script>
+        <script src="static/js/plotting/grun40/grun40.js"></script>
         <script src="static/js/plotting/grun48/grun48.js"></script>
         <script src="static/js/plotting/grun50/grun50.js"></script>
+        <script src="static/js/plotting/grun58/grun58.js"></script>
     
       </div>
       <script src="static/js/bulma-carousel.min.js"></script>
@@ -430,14 +430,16 @@
 <section class="section is-light" id="foxglove viz">
   <div class="container is-max-desktop content">
     <h1 class="title is-3">HD Maps</h1>
-    <p id="percep-description">
+    <!-- Temporarily removed until can find good public host for larger pcds -->
+    <!-- <p id="percep-description">
       🗺️<em>
         <span class="text-emphasize" style="color: #4983db;">MAP EXPLORATION</span>
         : Pan around our HD maps<br />Menu > Tools > Navigation to change movement pattern
       </em>
-    </p>
+    </p> -->
     <div>
-      <iframe src="potree-viewer.html" width="100%" height="500px"></iframe>
+      <!-- <iframe src="potree-viewer.html" width="100%" height="500px"></iframe> -->
+      <img src="assets/lvms_map.png" alt="HD Pointcloud Map"/>
     </div>
   </div>
 </section>
@@ -447,7 +449,7 @@
     <h1 class="title is-3">ROS2 Visualization</h1>
     <!-- Foxglove -->
     <div class="button-wrapper center">
-      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun48-trimmed%2Fgrun48_trimmed_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250307%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250307T221604Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Dc1b6349f529f026d90c6bb3f8f8fb6ff1fb62d3773792fce4d6035d249c82011&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.300020992Z" target="_blank" class="custom-button">
+      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-snippet%2Fgrun-48-snippet_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250514%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250514T045351Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3D25701928155d30a0ccf82c10e0d4204ac68683c2b6ae1d259d447c65f28fbe7c&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.000345000Z" target="_blank" class="custom-button">
         <div class="button-content">
           <div>
             <video controls autoplay loop muted playsinline style="pointer-events: none;">
@@ -472,7 +474,7 @@
 
 <section class="section is-light" id="sensor-specs">
   <div class="container is-max-desktop content">
-    <h2 class="title is-3">Sensor Specifications</h2>
+    <h2 class="title is-3">System</h2>
     <div style="text-align: center;">
       <img src="assets/betty_sensors.svg" alt="AV21 (betty) sensors" width="70%"/>
       <img src="assets/betty_sensors_key.svg" alt="AV21 (betty) sensors key" width="70%"/>
@@ -481,12 +483,12 @@
 </section>
 
 
-<section class="section is-light" id="data-format">
+<!-- <section class="section is-light" id="data-format">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Data Format</h2>
 
   </div>
-</section>
+</section> -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
