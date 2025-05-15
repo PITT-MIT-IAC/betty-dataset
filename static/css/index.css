@@ -163,46 +163,45 @@ section.is-light {
 
 /* Track Selection */
 #track-select-outline {
-  border: 2px solid rgb(54, 53, 53); /* Black outline */
-  border-radius: 10px; /* Rounded corners */
-  padding: 1rem; /* Add some padding inside the outline */
-  margin-bottom: 2rem; /* Add spacing below the outline */
+  border: 2px solid rgb(54, 53, 53);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden; /* Prevent content from escaping the outline */
 }
 
 #track-select-block {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column; /* Stack vertically on all screens */
+  align-items: flex-start; /* Align items to the start */
   margin-bottom: 10px;
-
-  /* TBD if I want stickiness */
-  /* position: sticky;
-  top: 0;
-  padding: 10px 16px;
-  background: white;
-  z-index: 1000; */
 }
 
 #track-select-row {
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-  align-items: center;
-  gap: 0px; /* Add spacing between buttons */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 10px; /* Add spacing between buttons */
+  width: 100%; /* Take full width */
+  margin-top: 1rem; /* Add space between title and buttons */
+  margin-left: 0; /* Remove previous margin-left */
 }
 
 .track-select-button {
-  margin: 5px;
-  width: 90px; /* Keep the width unchanged */
-  background-color: #ffffff; /* White background */
+  margin: 0; /* Remove individual margins since we have gap */
+  width: 100%; /* Full width of grid cell */
+  max-width: 120px; /* Maximum width to prevent stretching */
+  background-color: #ffffff;
   cursor: pointer;
   border: none;
-  border-radius: 12px; /* More rounded corners */
+  border-radius: 12px;
   text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px 4px; /* Adjust padding */
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 4px; /* Add padding for better spacing */
+  justify-content: center;
 }
 
 /* Hover effect */
@@ -221,18 +220,53 @@ section.is-light {
   background-color: #ffe8e5;
 }
 
-/* Track icon (unchanged) */
+/* Adjust track icon size for smaller screens */
 .track-icon {
-  width: 80px; /* Keep the icon size unchanged */
-  height: auto; /* Maintain aspect ratio */
+  width: 60px;
+  height: auto;
 }
 
 /* Text inside the button */
 .track-select-button p {
-  margin: 0; /* Remove default margin */
-  font-size: 14px; /* Adjust font size */
-  font-weight: bold; /* Make text bold */
-  color: #333; /* Dark gray text color */
+  margin: 5px 0 0 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Media queries for responsive adjustments */
+@media (min-width: 800px) {
+  #track-select-block {
+    flex-direction: row; /* Side by side on larger screens */
+    align-items: center;
+  }
+  
+  #track-select-row {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 5px;
+    margin-top: 0;
+  }
+  
+  .track-select-button {
+    width: 90px;
+  }
+  
+  .track-icon {
+    width: 80px;
+  }
+  
+  .track-select-button p {
+    font-size: 14px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+  #track-select-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+  }
 }
 
 /* Sensor selection */
