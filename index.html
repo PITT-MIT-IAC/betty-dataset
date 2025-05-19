@@ -429,7 +429,7 @@
     <h1 class="title is-3">ROS2 Visualization</h1>
     <!-- Foxglove -->
     <div class="button-wrapper center">
-      <a href="https://app.foxglove.dev/micah-nye-1/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-snippet%2Fgrun-48-snippet_0.mcap&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.000345000Z" target="_blank" class="custom-button">
+      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-snippet%2Fgrun-48-snippet_0.mcap&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.000345000Z" target="_blank" class="custom-button">
         <div class="button-content">
           <div>
             <video controls autoplay loop muted playsinline style="pointer-events: none;">
@@ -439,8 +439,10 @@
           <div>
             <img src="assets/foxglove_logo.svg" alt="Icon" class="button-icon" />
             <span class="button-text">Check out the data replay features using Foxglove! (Click Me)</span>
-            <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
           </div>
+          <p class="is-size-7">Note: Foxglove account required. They do not support sharing layouts, so please download this json, if you want to visualize quickly! Visualization is currently very slow due to Foxglove servers.</p>
+          <!-- Separate download button that doesn't interfere with layout -->
+          <a href="assets/foxglove_layout.json" download class="json-download-button">Download Layout JSON</a>
         </div>
       </a>
     </div>
